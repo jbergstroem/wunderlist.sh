@@ -139,6 +139,7 @@ function help {
   help       : this screen
   list       : shows current todo's in 'new'
   new <todo> : inserts a new todo
+  done       : check a todo as done from list
 "
   exit 0
 }
