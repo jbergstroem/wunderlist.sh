@@ -9,6 +9,8 @@
 #
 # Changelog
 #
+# - Support the Wunderlist linux flavor
+#
 # * Released 0.1 (2011-09-16)
 #
 # - Added list, help, done and new commands
@@ -17,7 +19,13 @@
 VERSION="0.1"
 
 SQLITE=`which sqlite3`
-DB=`ls ~/Library/Wunderlist/wunderlist.db`
+
+# Modify path depending on what os we run
+# defaults to os x (Darwin)
+FLAVOR="Library"
+[[ `uname` == "Linux" ]] && FLAVOR=".titanium"
+
+DB=`ls ~/${FLAVOR}/Wunderlist/wunderlist.db`
 
 CMD=$1
 shift
